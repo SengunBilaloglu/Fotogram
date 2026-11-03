@@ -17,7 +17,24 @@ renderImages();
 
 function renderImages() {
     for (let i = 0; i < images.length; i++) {
-        galleryRef.innerHTML+=`<img src="${images[i]}" alt="${images[i]}" class="component">`;
-        
+        galleryRef.innerHTML += `<img src="${images[i]}" alt="${images[i]}" class="component" onclick="openDialog()">`;
+        //     galleryRef.innerHTML+=`<img src="${images[i]}" alt="${images[i]}" class="component">`;
+        // }
     }
-} 
+}
+
+const dialogRef=document.getElementById("dialogId");
+
+function openDialog() {
+    dialogRef.showModal();
+}
+
+function closeDialog() {
+    dialogRef.close();
+}
+
+function closeDialog2(event) {
+    dialogRef.close();
+    event.stopPropagation();
+}
+
