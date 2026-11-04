@@ -32,18 +32,18 @@ const dialogRef=document.getElementById("dialogId");
 
 let indexNo=0;
 let index=0;
-let name="";
+let imgName="";
 
 function openDialog(element) {
     dialogRef.showModal();
     // console.log(element);
     const a=element.getAttribute('src');
-    // console.log(a);
+    console.log(a);
 
-    name = a.split('/').pop().split('.').shift();
+    imgName = a.split('/').pop().split('.').shift();
 
     imgRef.setAttribute('src', a);
-    imgHeaderRef.innerText=name;
+    imgHeaderRef.innerText=imgName;
 
     indexNo=images.indexOf(a);
     console.log(indexNo);
@@ -62,6 +62,9 @@ function nextImg() {
 
     imgRef.setAttribute('src',images[indexNo]);
     imgNumberRef.innerText=(indexNo+1) + "/" + images.length;
+
+    imgName=images[indexNo].split('/').pop().split('.').shift();
+    imgHeaderRef.innerText=imgName;
 }
 
 function prevImg() {
@@ -74,14 +77,19 @@ function prevImg() {
 
     imgRef.setAttribute('src',images[indexNo]);
     imgNumberRef.innerText=(indexNo+1) + "/" + images.length;
+
+    imgName=images[indexNo].split('/').pop().split('.').shift();
+    imgHeaderRef.innerText=imgName;
 }
 
 function closeDialog() {
     dialogRef.close();
 }
 
-// function closeDialog2(event) {
-//     dialogRef.close();
-//     event.stopPropagation();
-// }
+function closeDialogOutside(event) {
+    event.stopPropagation();
 
+    if (event.target === dialogRef) {
+        closeDialog();
+    }
+}

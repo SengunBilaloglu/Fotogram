@@ -127,26 +127,27 @@ h1 {
 .component {
     width: 150px;
     height: 150px;
-    border: 2px rgba(18, 70, 88, 1);
+    border: 2px solid rgba(18, 70, 88, 1);
     border-radius: 16px;
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: border ease-out 100ms;
 }
 
 .component:hover {
 
-    border: 2px rgba(107, 193, 225, 1);
+    border: 2px solid rgba(107, 193, 225, 1);
 
 }
 
-#gallery>img:hover {
+/* #gallery>img:hover {
     border: 2px rgba(107, 193, 225, 1);
-}
+} */
 
 .img-content {
     width: 560px;
     height: 375px;
+    object-fit: cover;
 }
 
 dialog[open] {
@@ -201,4 +202,8 @@ dialog p,h2{
     background-color: rgba(9, 33, 42, 1);
     border: none;
     cursor: pointer;
+}
+
+@media screen and (min-width:375px) and (max-width:768px) {
+
 }
