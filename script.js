@@ -22,7 +22,7 @@ let imageIndex=0;
 
 function renderImages() {
     for (let i = 0; i < images.length; i++) {
-        galleryRef.innerHTML += `<img src="${images[i]}" alt="${images[i]}" class="component" onclick="openDialog(this)">`;
+        galleryRef.innerHTML += `<img src="${images[i]}" alt="${images[i]}" class="components" tabindex="0" onclick="openDialog(this)" onkeydown="if(event.key === 'Enter') openDialog(this)"> `;
         //     galleryRef.innerHTML+=`<img src="${images[i]}" alt="${images[i]}" class="component">`;
         // }
     }
