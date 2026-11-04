@@ -284,8 +284,6 @@ h2 {
         height: 375px;
         object-fit:cover;
     }
-
-   
 }
 
 @media screen and (min-width:375px) and (max-width:480px) {
