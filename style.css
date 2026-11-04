@@ -204,7 +204,7 @@ h2 {
 @media screen and (min-width:320px) and (max-width:375px) {
     nav {
         width: 300px;
-        display: flex;        
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -213,7 +213,6 @@ h2 {
         height:auto;
     }
 
-    /* ----------->320----------------------- */
        .components {
         width: 120px;
         height: 120px;
@@ -256,13 +255,43 @@ h2 {
 
     .gallery {
         width: 300px;
-        
+
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: 639px) {
+
+    dialog[open] {
+        /* width: calc(100vw - 32px); */
+        width: 343px;
+        height: 664px;
+        /* max-height: 90vh; */
+        padding: 24px 16px;
+        border-radius: 24px;
+        gap: 24px;
+    }
+
+    .sectionHeader {
+        width: 100%;
+    }
+
+    .sectionHeader h2 {
+        font-size: 20px;
+    }
+
+    .img-content {
+        width: 300px;
+        height: 375px;
+        object-fit:cover;
+    }
+
+   
+}
+
 @media screen and (min-width:375px) and (max-width:480px) {
     nav {
         width: 330px;
-        display: flex;        
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -271,7 +300,6 @@ h2 {
         height:auto;
     }
 
-    /* ----------->320----------------------- */
        .components {
         width: 150px;
         height: 150px;
@@ -314,14 +342,14 @@ h2 {
 
     .gallery {
         width: 330px;
-        
+
     }
 }
 
 @media screen and (min-width:480px) and (max-width:639px) {
     nav {
         width: 480px;
-        display: flex;        
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -330,7 +358,6 @@ h2 {
         height:auto;
     }
 
-    /* ----------->320----------------------- */
        .components {
         width: 150px;
         height: 150px;
@@ -373,14 +400,14 @@ h2 {
 
     .gallery {
         width: 450px;
-       
+
     }
 }
 
 @media screen and (min-width:640px) and (max-width:767px) {
     nav {
         width: 640px;
-        display: flex;        
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -390,7 +417,6 @@ h2 {
          height: calc(100vh - 175px);
     }
 
-    /* ----------->320----------------------- */
        .components {
         width: 150px;
         height: 150px;
@@ -433,7 +459,7 @@ h2 {
 
     .gallery {
         width: 600px;
-       
+
     }
 }
 
@@ -442,7 +468,7 @@ h2 {
 @media screen and (min-width:768px) and (max-width:1170px) {
     nav {
         width: 768px;
-        display: flex;        
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -452,7 +478,6 @@ h2 {
          height: calc(100vh - 175px);
     }
 
-    /* ----------->320----------------------- */
        .components {
         width: 150px;
         height: 150px;
@@ -495,13 +520,13 @@ h2 {
 
     .gallery {
         width: 700px;
-       
+
     }
 }
 @media screen and (min-width:1170px) and (max-width:1439px){
     nav {
         width: 1000px;
-        display: flex;        
+        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -511,7 +536,6 @@ h2 {
          height: calc(100vh - 175px);
     }
 
-    /* ----------->320----------------------- */
        .components {
         width: 150px;
         height: 150px;
@@ -554,7 +578,7 @@ h2 {
 
     .gallery {
         width: 1000px;
-       
+
     }
 }
 
@@ -568,7 +592,6 @@ h2 {
          height: calc(100vh - 209px);
     }
 
-    /* ----------->320----------------------- */
        .components {
         width: 150px;
         height: 150px;
@@ -611,6 +634,6 @@ h2 {
 
     .gallery {
         width: 1170px;
-       
+
     }
 }
