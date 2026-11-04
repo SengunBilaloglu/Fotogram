@@ -185,6 +185,7 @@ dialog p,h2{
     align-items: center;
     width: 261px;
     background-color: rgba(9, 33, 42, 1);
+    gap: 56px;
 }
 
 .sectionButtons>button {

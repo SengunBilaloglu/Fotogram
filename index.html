@@ -24,7 +24,7 @@
         </div> 
         <dialog id="dialogId">
             <section class="sectionHeader">
-                <h2>
+                <h2 id="headerId">
                     text
                 </h2>
                 <button>
@@ -32,16 +32,16 @@
                 </button>
             </section>
             <section class="sectionImg">
-                <img src="./assets/img/Alaska.jpg" alt="photo" class="img-content">                
+                <img id="dialogImage" src="" alt="photo" class="img-content">                
             </section>
             <section class="sectionButtons">
-                <button >
+                <button id="rightClick" onclick="prevImg()">
                     <img src="./assets/icons/arrow-left.png" alt="arrow-left" onmouseover="this.src='./assets/icons/arrow-left-hover.png';" onmouseout="this.src='./assets/icons/arrow-left.png';">
                 </button>
-                <p>
+                <p id="imgNumber">
                     text
                 </p>
-                <button >
+                <button id="leftClick" onclick="nextImg()">
                     <img src="./assets/icons/arrow-right.png" alt="arrow-right" onmouseover="this.src='./assets/icons/arrow-right-hover.png';" onmouseout="this.src='./assets/icons/arrow-right.png';">
                 </button>
             </section>

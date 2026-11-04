@@ -12,12 +12,17 @@ const images = ['./assets/img/Alaska.jpg',
     , './assets/img/Winter.jpg'];
 
 const galleryRef = document.getElementById("gallery");
+const imgRef=document.getElementById("dialogImage");
+const imgHeaderRef=document.getElementById("headerId");
+const imgNumberRef=document.getElementById("imgNumber");
 
 renderImages();
 
+let imageIndex=0;
+
 function renderImages() {
     for (let i = 0; i < images.length; i++) {
-        galleryRef.innerHTML += `<img src="${images[i]}" alt="${images[i]}" class="component" onclick="openDialog()">`;
+        galleryRef.innerHTML += `<img src="${images[i]}" alt="${images[i]}" class="component" onclick="openDialog(this)">`;
         //     galleryRef.innerHTML+=`<img src="${images[i]}" alt="${images[i]}" class="component">`;
         // }
     }
@@ -25,16 +30,58 @@ function renderImages() {
 
 const dialogRef=document.getElementById("dialogId");
 
-function openDialog() {
+let indexNo=0;
+let index=0;
+let name="";
+
+function openDialog(element) {
     dialogRef.showModal();
+    // console.log(element);
+    const a=element.getAttribute('src');
+    // console.log(a);
+
+    name = a.split('/').pop().split('.').shift();
+
+    imgRef.setAttribute('src', a);
+    imgHeaderRef.innerText=name;
+
+    indexNo=images.indexOf(a);
+    console.log(indexNo);
+
+    imgNumberRef.innerText=(indexNo+1) + "/" + images.length;
+    
+}
+
+function nextImg() {
+    if (indexNo<11) {
+        indexNo++;
+    }
+    else 
+        indexNo=0;
+    
+
+    imgRef.setAttribute('src',images[indexNo]);
+    imgNumberRef.innerText=(indexNo+1) + "/" + images.length;
+}
+
+function prevImg() {
+    if (indexNo>0) {
+        indexNo--;
+    }
+    else 
+        indexNo=11;
+    
+
+    imgRef.setAttribute('src',images[indexNo]);
+    imgNumberRef.innerText=(indexNo+1) + "/" + images.length;
 }
 
 function closeDialog() {
     dialogRef.close();
 }
 
-function closeDialog2(event) {
-    dialogRef.close();
-    event.stopPropagation();
-}
+// function closeDialog2(event) {
+//     dialogRef.close();
+//     event.stopPropagation();
+// }
 
