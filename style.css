@@ -127,7 +127,8 @@ h1 {
     transition: border ease-out 100ms; */
     margin: 0;
 }
-.image-button{
+
+.image-button {
     width: 150px;
     height: 150px;
     border: 2px solid rgba(18, 70, 88, 1);
@@ -136,7 +137,7 @@ h1 {
     cursor: pointer;
     transition: border ease-out 100ms;
     padding-block: 0;
-    padding-inline: 0;  
+    padding-inline: 0;
     padding: 0;
     overflow: hidden;
 }
@@ -145,7 +146,7 @@ h1 {
     transform: scale(1.05);
 }
 
-.image-button:hover{
+.image-button:hover {
     border: 2px solid var(--hover-color);
 }
 
@@ -228,15 +229,15 @@ h2 {
     }
 
     main {
-        height:auto;
+        height: auto;
     }
 
-       .components {
+    .components {
         width: 120px;
         height: 120px;
     }
 
-        .image-button {
+    .image-button {
         width: 120px;
         height: 120px;
     }
@@ -279,7 +280,7 @@ h2 {
 
     }
 
-        dialog[open] {
+    dialog[open] {
         width: 280px;
         height: 550px;
         padding: 10px 10px;
@@ -299,10 +300,11 @@ h2 {
     .img-content {
         width: 250px;
         height: 350px;
-        object-fit:cover;
+        object-fit: cover;
     }
-    .sectionButtons{
-        gap:40px;
+
+    .sectionButtons {
+        gap: 40px;
         width: 250px;
     }
 }
@@ -328,7 +330,7 @@ h2 {
     .img-content {
         width: 300px;
         height: 375px;
-        object-fit:cover;
+        object-fit: cover;
     }
 }
 
@@ -341,10 +343,15 @@ h2 {
     }
 
     main {
-        height:auto;
+        height: auto;
     }
 
-       .components {
+    .components {
+        width: 150px;
+        height: 150px;
+    }
+
+    .image-button {
         width: 150px;
         height: 150px;
     }
@@ -397,10 +404,15 @@ h2 {
     }
 
     main {
-        height:auto;
+        height: auto;
     }
 
-       .components {
+    .components {
+        width: 150px;
+        height: 150px;
+    }
+
+    .image-button {
         width: 150px;
         height: 150px;
     }
@@ -452,10 +464,14 @@ h2 {
     }
 
     main {
-         height: calc(100vh - 175px);
+        height: calc(100vh - 175px);
     }
 
-       .components {
+    .components {
+        width: 150px;
+        height: 150px;
+    }
+    .image-button {
         width: 150px;
         height: 150px;
     }
@@ -509,10 +525,14 @@ h2 {
     }
 
     main {
-         height: calc(100vh - 175px);
+        height: calc(100vh - 175px);
     }
 
-       .components {
+    .components {
+        width: 150px;
+        height: 150px;
+    }
+    .image-button {
         width: 150px;
         height: 150px;
     }
@@ -554,7 +574,8 @@ h2 {
 
     }
 }
-@media screen and (min-width:1170px) and (max-width:1439px){
+
+@media screen and (min-width:1170px) and (max-width:1439px) {
     nav {
         width: 1000px;
         display: flex;
@@ -563,10 +584,14 @@ h2 {
     }
 
     main {
-         height: calc(100vh - 175px);
+        height: calc(100vh - 175px);
     }
 
-       .components {
+    .components {
+        width: 150px;
+        height: 150px;
+    }
+    .image-button {
         width: 150px;
         height: 150px;
     }
@@ -609,19 +634,23 @@ h2 {
     }
 }
 
-@media screen and (min-width:1440px){
+@media screen and (min-width:1440px) {
     nav {
         width: 1170px;
     }
 
     main {
-         height: calc(100vh - 209px);
+        height: calc(100vh - 209px);
     }
 
-       .components {
+    .components {
         width: 150px;
         height: 150px;
-         
+
+    }
+    .image-button {
+        width: 150px;
+        height: 150px;
     }
 
     .logo {
