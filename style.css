@@ -1,6 +1,5 @@
 @font-face {
     font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: 'Figtree';
     font-style: normal;
     font-weight: 400;
@@ -49,7 +48,6 @@ footer {
 
 .DA {
     position: absolute;
-    /* z-index: 2; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,7 +57,6 @@ footer {
 }
 
 .DA p {
-    /* position: absolute; */
     font-weight: 400;
     font-size: 14px;
     color: var(--text-color);
@@ -71,7 +68,6 @@ footer {
     height: 128px;
     top: -1px;
     position: absolute;
-    /* z-index: 1; */
 }
 
 .content {
@@ -84,8 +80,6 @@ footer {
     gap: 80px;
     margin-top: 120px;
     margin-bottom: 120px;
-    /* height: 100vh; */
-    /* height:calc(100vh - 81px); */
 }
 
 .gallery {
@@ -109,7 +103,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* height: 100vh; */
     height: calc(100vh - 209px);
 }
 
@@ -125,6 +118,16 @@ h1 {
 }
 
 .components {
+    width: 145px;
+    height: 145px;
+    /* border: 2px solid rgba(18, 70, 88, 1); */
+    border-radius: 16px;
+    object-fit: cover;
+    /* cursor: pointer;
+    transition: border ease-out 100ms; */
+    margin: 0;
+}
+.image-button{
     width: 150px;
     height: 150px;
     border: 2px solid rgba(18, 70, 88, 1);
@@ -132,13 +135,30 @@ h1 {
     object-fit: cover;
     cursor: pointer;
     transition: border ease-out 100ms;
+    padding-block: 0;
+    padding-inline: 0;  
+    padding: 0;
+    overflow: hidden;
 }
 
-.components:hover {
+.image-button:hover .component {
+    transform: scale(1.05);
+}
+
+.image-button:hover{
+    border: 2px solid var(--hover-color);
+}
+
+.image-button:focus-visible {
+    outline: 2px solid rgba(107, 193, 225, 1);
+    outline-offset: 3px;
+}
+
+/* .components:hover {
 
     border: 2px solid var(--hover-color);
 
-}
+} */
 
 .img-content {
     width: 560px;
@@ -189,11 +209,9 @@ h2 {
 .sectionButtons>button {
     background-color: var(--primary-color);
     border: none;
+    cursor: pointer;
 }
 
-/* .sectionButtons > .arrow-right:hover{
-    opacity: 0%;
-} */
 
 .sectionHeader>button {
     background-color: var(--primary-color);
@@ -218,6 +236,11 @@ h2 {
         height: 120px;
     }
 
+        .image-button {
+        width: 120px;
+        height: 120px;
+    }
+
     .logo {
         width: 168px;
         height: 32px;
@@ -230,7 +253,6 @@ h2 {
 
     footer {
         height: 103px;
-        /* position: fixed; */
     }
 
     .subtract {
@@ -250,29 +272,53 @@ h2 {
 
     .content {
         width: 320px;
-        /* padding-top: 350px; */
     }
 
     .gallery {
         width: 300px;
 
     }
-}
 
-@media screen and (min-width: 320px) and (max-width: 639px) {
-
-    dialog[open] {
-        /* width: calc(100vw - 32px); */
-        width: 343px;
-        height: 664px;
-        /* max-height: 90vh; */
-        padding: 24px 16px;
+        dialog[open] {
+        width: 280px;
+        height: 550px;
+        padding: 10px 10px;
         border-radius: 24px;
-        gap: 24px;
+        gap: 10px;
+        box-sizing: unset;
     }
 
     .sectionHeader {
-        width: 100%;
+        width: 250px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 20px;
+    }
+
+    .img-content {
+        width: 250px;
+        height: 350px;
+        object-fit:cover;
+    }
+    .sectionButtons{
+        gap:40px;
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 639px) {
+
+    dialog[open] {
+        width: 343px;
+        height: 664px;
+        padding: 32px 16px;
+        border-radius: 40px;
+        gap: 48px;
+    }
+
+    .sectionHeader {
+        width: 300px;
     }
 
     .sectionHeader h2 {
@@ -315,7 +361,6 @@ h2 {
 
     footer {
         height: 103px;
-        /* position: fixed; */
     }
 
     .subtract {
@@ -335,7 +380,6 @@ h2 {
 
     .content {
         width: 375px;
-        /* padding-top: 350px; */
     }
 
     .gallery {
@@ -344,7 +388,7 @@ h2 {
     }
 }
 
-@media screen and (min-width:480px) and (max-width:639px) {
+@media screen and (min-width:481px) and (max-width:640px) {
     nav {
         width: 480px;
         display: flex;
@@ -373,7 +417,6 @@ h2 {
 
     footer {
         height: 103px;
-        /* position: fixed; */
     }
 
     .subtract {
@@ -393,16 +436,14 @@ h2 {
 
     .content {
         width: 480px;
-        /* padding-top: 350px; */
     }
 
     .gallery {
         width: 450px;
-
     }
 }
 
-@media screen and (min-width:640px) and (max-width:767px) {
+@media screen and (min-width:640px) and (max-width:768px) {
     nav {
         width: 640px;
         display: flex;
@@ -411,7 +452,6 @@ h2 {
     }
 
     main {
-        /* height:auto; */
          height: calc(100vh - 175px);
     }
 
@@ -427,12 +467,10 @@ h2 {
 
     header {
         height: 72px;
-        /* position: fixed; */
     }
 
     footer {
         height: 103px;
-        /* position: fixed; */
     }
 
     .subtract {
@@ -452,7 +490,6 @@ h2 {
 
     .content {
         width: 600px;
-        /* padding-top: 350px; */
     }
 
     .gallery {
@@ -472,7 +509,6 @@ h2 {
     }
 
     main {
-        /* height:auto; */
          height: calc(100vh - 175px);
     }
 
@@ -488,12 +524,10 @@ h2 {
 
     header {
         height: 72px;
-        /* position: fixed; */
     }
 
     footer {
         height: 103px;
-        /* position: fixed; */
     }
 
     .subtract {
@@ -513,7 +547,6 @@ h2 {
 
     .content {
         width: 700px;
-        /* padding-top: 350px; */
     }
 
     .gallery {
@@ -530,7 +563,6 @@ h2 {
     }
 
     main {
-        /* height:auto; */
          height: calc(100vh - 175px);
     }
 
@@ -546,12 +578,10 @@ h2 {
 
     header {
         height: 72px;
-        /* position: fixed; */
     }
 
     footer {
         height: 103px;
-        /* position: fixed; */
     }
 
     .subtract {
@@ -571,7 +601,6 @@ h2 {
 
     .content {
         width: 1000px;
-        /* padding-top: 350px; */
     }
 
     .gallery {
@@ -586,13 +615,13 @@ h2 {
     }
 
     main {
-        /* height:auto; */
          height: calc(100vh - 209px);
     }
 
        .components {
         width: 150px;
         height: 150px;
+         
     }
 
     .logo {
@@ -602,12 +631,10 @@ h2 {
 
     header {
         height: 81px;
-        /* position: fixed; */
     }
 
     footer {
         height: 128px;
-        /* position: fixed; */
     }
 
     .subtract {
@@ -627,7 +654,6 @@ h2 {
 
     .content {
         width: 1170px;
-        /* padding-top: 350px; */
     }
 
     .gallery {

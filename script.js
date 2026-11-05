@@ -1,85 +1,92 @@
 const images = ['./assets/img/Alaska.jpg',
-    './assets/img/Anime.jpg'
-    , './assets/img/Atmosphere.png'
-    , './assets/img/Blue-tit.jpg'
-    , './assets/img/Hurricane.jpg'
-    , './assets/img/Lake.jpg'
-    , './assets/img/Moorente.jpg'
-    , './assets/img/Sea.jpg'
-    , './assets/img/Snow-bunting.jpg'
-    , './assets/img/Snow-leopard.jpg'
-    , './assets/img/Travel.jpg'
-    , './assets/img/Winter.jpg'];
+    './assets/img/Anime.jpg',
+    './assets/img/Atmosphere.png',
+    './assets/img/Blue-tit.jpg',
+    './assets/img/Hurricane.jpg',
+    './assets/img/Lake.jpg',
+    './assets/img/Moorente.jpg',
+    './assets/img/Sea.jpg',
+    './assets/img/Snow-bunting.jpg',
+    './assets/img/Snow-leopard.jpg',
+    './assets/img/Travel.jpg',
+    './assets/img/Winter.jpg'];
 
 const galleryRef = document.getElementById("gallery");
-const imgRef=document.getElementById("dialogImage");
-const imgHeaderRef=document.getElementById("headerId");
-const imgNumberRef=document.getElementById("imgNumber");
+const imgRef = document.getElementById("dialogImage");
+const imgHeaderRef = document.getElementById("headerId");
+const imgNumberRef = document.getElementById("imgNumber");
+const dialogRef = document.getElementById("dialogId");
+
+let indexNum = 0;
+let index = 0;
+let imgName = "";
 
 renderImages();
 
-let imageIndex=0;
+let imageIndex = 0;
 
 function renderImages() {
+    // for (let i = 0; i < images.length; i++) {
+    //     galleryRef.innerHTML += `<img src="${images[i]}" alt="${images[i]}" 
+    //                             class="components" tabindex="0" onclick="openDialog(this)" 
+    //                             onkeydown="if(event.key === 'Enter') openDialog(this)"> `;
+    // }
+
     for (let i = 0; i < images.length; i++) {
-        galleryRef.innerHTML += `<img src="${images[i]}" alt="${images[i]}" class="components" tabindex="0" onclick="openDialog(this)" onkeydown="if(event.key === 'Enter') openDialog(this)"> `;
-        //     galleryRef.innerHTML+=`<img src="${images[i]}" alt="${images[i]}" class="component">`;
-        // }
-    }
+    galleryRef.innerHTML += `
+        <button type="button" class="image-button"
+            onclick="openDialog(this.querySelector('img'))">
+            <img src="${images[i]}"
+                alt="Photo ${i + 1}"
+                class="components">
+        </button>
+    `;
 }
-
-const dialogRef=document.getElementById("dialogId");
-
-let indexNo=0;
-let index=0;
-let imgName="";
+}
 
 function openDialog(element) {
     dialogRef.showModal();
-    // console.log(element);
-    const a=element.getAttribute('src');
-    console.log(a);
+    const a = element.getAttribute('src');
 
     imgName = a.split('/').pop().split('.').shift();
 
     imgRef.setAttribute('src', a);
-    imgHeaderRef.innerText=imgName;
+    imgHeaderRef.innerText = imgName;
 
-    indexNo=images.indexOf(a);
-    console.log(indexNo);
+    indexNum = images.indexOf(a);
 
-    imgNumberRef.innerText=(indexNo+1) + "/" + images.length;
-    
+    imgNumberRef.innerText = (indexNum + 1) + "/" + images.length;
+
 }
 
 function nextImg() {
-    if (indexNo<11) {
-        indexNo++;
+    if (indexNum < 11) {
+        indexNum++;
     }
-    else 
-        indexNo=0;
-    
+    else {
+        indexNum = 0;
+    }
 
-    imgRef.setAttribute('src',images[indexNo]);
-    imgNumberRef.innerText=(indexNo+1) + "/" + images.length;
+    imgRef.setAttribute('src', images[indexNum]);
+    imgNumberRef.innerText = (indexNum + 1) + "/" + images.length;
 
-    imgName=images[indexNo].split('/').pop().split('.').shift();
-    imgHeaderRef.innerText=imgName;
+    imgName = images[indexNum].split('/').pop().split('.').shift();
+    imgHeaderRef.innerText = imgName;
 }
 
 function prevImg() {
-    if (indexNo>0) {
-        indexNo--;
+    if (indexNum > 0) {
+        indexNum--;
     }
-    else 
-        indexNo=11;
-    
+    else {
+        indexNum = 11;
+    }
 
-    imgRef.setAttribute('src',images[indexNo]);
-    imgNumberRef.innerText=(indexNo+1) + "/" + images.length;
+    imgRef.setAttribute('src', images[indexNum]);
+    imgNumberRef.innerText = (indexNum + 1) + "/" + images.length;
 
-    imgName=images[indexNo].split('/').pop().split('.').shift();
-    imgHeaderRef.innerText=imgName;
+    imgName = images[indexNum].split('/').pop().split('.').shift();
+    imgHeaderRef.innerText = imgName;
 }
 
 function closeDialog() {
